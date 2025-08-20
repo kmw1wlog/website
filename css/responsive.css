@@ -1,0 +1,9 @@
+@media (max-width:768px){
+  .nav{display:none;flex-direction:column;}
+  .nav.active{display:flex;}
+  .hamburger{display:block;}
+  .about{flex-direction:column;}
+  .about img{max-width:100%;}
+  .program-cards{flex-direction:column;}
+  .usp{flex-direction:column;}
+}
