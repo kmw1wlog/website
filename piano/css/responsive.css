@@ -1,0 +1,10 @@
+/* Responsive styles */
+@media (max-width:768px) {
+  .usp { flex-direction:column; }
+  .about { flex-direction:column; }
+  .enroll form { grid-template-columns:1fr; }
+}
+@media (max-width:480px) {
+  .top-bar { flex-direction:column; }
+  body { padding-top:90px; }
+}
