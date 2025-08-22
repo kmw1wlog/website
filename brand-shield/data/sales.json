@@ -1,0 +1,5 @@
+[
+  {"store_id":"s1","date":"2024-05-30","sales_net":100000,"orders":100,"cancellations":2,"discount_amount":5000,"cohort_flags":{"new_menu":false,"promo":false}},
+  {"store_id":"s1","date":"2024-05-31","sales_net":95000,"orders":95,"cancellations":1,"discount_amount":4000,"cohort_flags":{"new_menu":false,"promo":false}},
+  {"store_id":"s1","date":"2024-06-01","sales_net":60000,"orders":60,"cancellations":3,"discount_amount":6000,"cohort_flags":{"new_menu":false,"promo":false}}
+]
