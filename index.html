@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>서울특별시청</title>
+  <!-- 스타일 연결: 접근성 위해 분리된 CSS 파일 사용 -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <!-- 스킵 링크: 키보드 사용자에게 메인 콘텐츠 바로가기 제공 -->
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <!-- 상단 고정 민원 행동바 -->
+  <div class="top-action-bar" role="region" aria-label="민원 행동바">
+    <p>지금 민원신청하고 처리현황을 바로 확인하세요.</p>
+    <div class="actions">
+      <a href="#" class="btn primary" role="button">민원신청</a>
+      <a href="#" class="btn secondary" role="button">처리조회</a>
+    </div>
+  </div>
+
+  <!-- 재난 알림 배너: 사용자가 닫을 수 있도록 버튼 제공 -->
+  <div class="alert-banner" role="alert" aria-live="polite">
+    <p>재난 알림: 오늘 폭염 주의보 발령</p>
+    <button class="close-alert" aria-label="재난 알림 닫기">&times;</button>
+  </div>
+
+  <!-- 헤더 및 내비게이션 -->
+  <header class="site-header">
+    <div class="logo" aria-label="서울특별시청 로고">Seoul</div>
+    <nav class="main-nav" aria-label="주 메뉴">
+      <ul>
+        <li><a href="#">기관소개</a></li>
+        <li><a href="#">민원·신고</a></li>
+        <li><a href="#">고시·공고</a></li>
+        <li><a href="#">정보공개</a></li>
+        <li><a href="#">소식·보도</a></li>
+        <li><a href="#">채용</a></li>
+        <li><a href="#">예산·결산</a></li>
+        <li><a href="#">자료실</a></li>
+        <li><a href="#">공공데이터</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="모바일 메뉴 열기">☰</button>
+    <div class="lang-switch" aria-label="언어 선택">
+      <button aria-label="한국어" class="active">KO</button>
+      <button aria-label="English">EN</button>
+      <button aria-label="中文">ZH</button>
+      <button aria-label="日本語">JA</button>
+    </div>
+  </header>
+
+  <!-- 메인 콘텐츠 -->
+  <main id="main">
+    <!-- 히어로 섹션 -->
+    <section class="hero" role="region" aria-label="주요 홍보">
+      <h1>시민이 편리한 서울</h1>
+      <p>오늘 꼭 해야 할 일 3가지: 민원, 고시공고, 재난알림</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn primary" role="button">민원신청</a>
+        <a href="#" class="btn secondary" role="button">재난알림 상세</a>
+      </div>
+    </section>
+
+    <!-- USP 4그리드 -->
+    <section class="usp-grid" aria-label="서비스 장점">
+      <ul>
+        <li><span class="icon" aria-hidden="true"></span><h3>빠른 민원</h3></li>
+        <li><span class="icon" aria-hidden="true"></span><h3>투명한 정보공개</h3></li>
+        <li><span class="icon" aria-hidden="true"></span><h3>모바일 최적화</h3></li>
+        <li><span class="icon" aria-hidden="true"></span><h3>쉬운 접근성</h3></li>
+      </ul>
+    </section>
+
+    <!-- 민원 바로가기 카드 -->
+    <section class="service-cards" aria-label="민원 바로가기">
+      <h2>민원 바로가기</h2>
+      <ul class="card-grid">
+        <li><a href="#">교통</a></li>
+        <li><a href="#">주차</a></li>
+        <li><a href="#">세금</a></li>
+        <li><a href="#">복지</a></li>
+        <li><a href="#">보건</a></li>
+        <li><a href="#">환경</a></li>
+      </ul>
+    </section>
+
+    <!-- 고시·공고 리스트 -->
+    <section class="notice-list" aria-label="고시 및 공고">
+      <h2>고시·공고</h2>
+      <ul>
+        <li><a href="#">[교통과] 도로공사 안내 <span class="badge">D-3</span></a></li>
+        <li><a href="#">[행정과] 주민설명회 개최 <span class="badge">D-10</span></a></li>
+        <li><a href="#">[복지과] 복지지원 안내 <span class="badge">D-5</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 보도자료 -->
+    <section class="press" aria-label="보도자료">
+      <h2>보도자료</h2>
+      <ul class="card-grid">
+        <li><a href="#">도시재생 사업 발표</a></li>
+        <li><a href="#">친환경 버스 도입</a></li>
+        <li><a href="#">시민 안전 캠페인</a></li>
+        <li><a href="#">청년 창업 지원</a></li>
+      </ul>
+    </section>
+
+    <!-- 채용 공고 -->
+    <section class="recruit" aria-label="채용 공고">
+      <h2>채용</h2>
+      <ul>
+        <li><a href="#">일반직 6급 <span class="badge ongoing">접수중</span></a></li>
+        <li><a href="#">기간제 근로자 <span class="badge ongoing">접수중</span></a></li>
+        <li><a href="#">청년인턴 <span class="badge closed">마감임박</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 부가 모듈: 달력, 데이터, 설문 -->
+    <section class="extras">
+      <div class="calendar" aria-label="달력"></div>
+      <div class="data-open" aria-label="공공데이터">
+        <h2>공공데이터 개방</h2>
+        <ul>
+          <li><a href="#">데이터셋 1</a></li>
+          <li><a href="#">API 1</a></li>
+        </ul>
+      </div>
+      <div class="survey" aria-label="설문조사">
+        <h2>시민 설문</h2>
+        <button class="btn secondary">참여하기</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 접근성 유틸 -->
+  <aside class="a11y-controls" aria-label="접근성 설정">
+    <button id="font-inc" aria-label="글자 크게">A+</button>
+    <button id="font-dec" aria-label="글자 작게">A-</button>
+    <button id="contrast" aria-label="고대비 전환">고대비</button>
+  </aside>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="footer-info">
+      <p>© 서울특별시청</p>
+      <p>민원 콜센터: 120</p>
+      <p><a href="#">오시는 길</a></p>
+    </div>
+    <ul class="policy-links">
+      <li><a href="#">개인정보처리방침</a></li>
+      <li><a href="#">저작권정책</a></li>
+      <li><a href="#">이메일무단수집거부</a></li>
+      <li><a href="#">뷰어다운로드안내</a></li>
+      <li><a href="#">누리집 이용안내</a></li>
+    </ul>
+  </footer>
+
+  <!-- 스크립트 연결 -->
+  <script src="js/main.js"></script>
+</body>
+</html>
