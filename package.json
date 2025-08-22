@@ -1,0 +1,13 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "이 레포는 **정적(Static) HTML/CSS/JS** 템플릿입니다. Next.js 같은 프레임워크를 쓰지 않으며, **필수 요소만** 포함합니다. 업종별(미용실/학원/헬스장/숙박 등)로는 **텍스트와 이미지만 교체**하면 됩니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

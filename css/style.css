@@ -1,0 +1,68 @@
+:root {
+  --color-primary: #0F6E8C;
+  --color-accent: #FFC658;
+  --color-text: #1F2937;
+  --color-muted: #6B7280;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F7FAFC;
+  --container-width: 1200px;
+  font-size: 16px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: var(--container-width); margin: 0 auto; padding: 0 1rem; }
+.header { position: sticky; top: 0; background: var(--color-bg); z-index: 1000; }
+.header .container { display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; }
+.nav { display: none; }
+.nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; }
+.nav a.active { color: var(--color-primary); }
+.nav-toggle { background: none; border: none; font-size: 1.5rem; }
+.fixed-reservation-bar { position: fixed; bottom: 1rem; right: 1rem; opacity: 0; transition: opacity .3s; }
+.fixed-reservation-bar.show { opacity: 1; }
+.btn-primary, .btn-secondary { display: inline-block; padding: 0.5rem 1rem; border-radius: 4px; transition: background .2s, transform .2s; }
+.btn-primary { background: var(--color-primary); color: #fff; }
+.btn-primary:hover { background: #0d5c76; transform: translateY(-2px); }
+.btn-secondary { background: var(--color-accent); color: #000; }
+.btn-secondary:hover { background: #e6ac40; transform: translateY(-2px); }
+.hero { position: relative; }
+.hero-slider { position: relative; overflow: hidden; }
+.hero-slider .slide { position: absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity .5s; }
+.hero-slider .slide.active { opacity:1; position:relative; }
+.slider-nav { position:absolute; top:50%; width:100%; display:flex; justify-content:space-between; }
+.slider-nav button { background:rgba(0,0,0,.4); color:#fff; border:none; padding:.5rem; }
+.slider-indicators { position:absolute; bottom:1rem; left:50%; transform:translateX(-50%); display:flex; gap:.5rem; }
+.slider-indicators button { width:10px; height:10px; border-radius:50%; border:none; background:#fff; opacity:.5; }
+.slider-indicators button.active { opacity:1; background:var(--color-primary); }
+.hero-content { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; color:#fff; }
+.usp-section { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:2rem 0; }
+.usp { background:var(--color-bg-alt); padding:1rem; border-radius:16px; text-align:center; }
+.intro-section { display:flex; flex-wrap:wrap; gap:2rem; align-items:center; margin:2rem 0; }
+.intro-section .intro-text { flex:1 1 300px; }
+.intro-section .intro-image { flex:1 1 300px; }
+.rooms-preview .room-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; }
+.room-card { background:var(--color-bg-alt); padding:1rem; border-radius:16px; box-shadow:0 4px 16px rgba(0,0,0,.1); transition:transform .2s; }
+.room-card:hover { transform:translateY(-4px); }
+.section-title { font-family:'Playfair Display',serif; font-size:1.5rem; margin:2rem 0 1rem; }
+.quick-reservation form { display:grid; gap:.5rem; max-width:400px; }
+.form-error { color:red; font-size:.875rem; }
+.contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; }
+.contact-item { background:var(--color-bg-alt); padding:1rem; border-radius:8px; text-align:center; }
+.footer { background:var(--color-bg-alt); padding:2rem 0; margin-top:2rem; }
+.footer-links { display:flex; gap:1rem; flex-wrap:wrap; }
+.rooms-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1rem; }
+.facility-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1rem; }
+.map-section, .transport, .attractions, .parking { margin:1rem 0; }
+.faq dt { font-weight:bold; margin-top:1rem; }
+.faq dd { margin-left:1rem; }
+@media (min-width:768px) {
+  .nav { display:block !important; }
+  .nav-toggle { display:none; }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예약 안내 | 비치웨이 게스트하우스</title>
+  <meta name="description" content="요금, 결제 방법, 환불 규정, 하우스 룰과 자주 묻는 질문을 확인하세요.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <p class="logo"><a href="index.html">비치웨이 게스트하우스</a></p>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span class="fas fa-bars"></span></button>
+    <nav class="nav" aria-label="주요">
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="rooms.html">객실</a></li>
+        <li><a href="facilities.html">시설</a></li>
+        <li><a href="location.html">오시는 길</a></li>
+        <li><a href="reservation.html" class="active">예약안내</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="fixed-reservation-bar" aria-hidden="true">
+  <button class="btn-primary" onclick="scrollToReservation()">예약하기</button>
+</div>
+<main class="container">
+  <h1>예약 및 요금 안내</h1>
+  <section class="rates">
+    <h2>요금 가이드</h2>
+    <ul>
+      <li>성수기(7–8월, 연휴): 객실 요금 +20%</li>
+      <li>주말(금·토·공휴일 전날): 객실 요금 +10%</li>
+      <li>표시 요금은 2인 기준, 추가 인원 발생 시 별도 요금 적용</li>
+    </ul>
+  </section>
+  <section class="payment">
+    <h2>결제 방법</h2>
+    <ul>
+      <li>현금, 카드, 계좌이체 가능</li>
+      <li>계좌 정보: 농협 302-0520-7078-11 김종학</li>
+    </ul>
+  </section>
+  <section class="refund">
+    <h2>환불 규정</h2>
+    <ul>
+      <li>D-7 이전: 100% 환불</li>
+      <li>D-3~D-6: 50% 환불</li>
+      <li>D-1~D-2: 20% 환불</li>
+      <li>체크인 당일 및 노쇼: 환불 불가</li>
+    </ul>
+  </section>
+  <section class="rules">
+    <h2>하우스 룰</h2>
+    <ul>
+      <li>체크인 15:00 이후 / 체크아웃 11:00 이전</li>
+      <li>객실 내 및 건물 내 전 구역 금연</li>
+      <li>밤 22시 이후 소음 자제</li>
+      <li>애완동물 동반 불가</li>
+      <li>분리수거 및 쓰레기 배출 준수</li>
+      <li>분실물 및 시설 손상 시 배상 책임</li>
+    </ul>
+  </section>
+  <section class="faq">
+    <h2>자주 묻는 질문</h2>
+    <dl>
+      <dt>Q. 조식은 어떻게 제공되나요?</dt>
+      <dd>A. 매일 아침 08:00–09:30 라운지에서 무료 제공됩니다.</dd>
+      <dt>Q. 취사가 가능한가요?</dt>
+      <dd>A. 공용 주방을 이용해 간단한 취사가 가능합니다.</dd>
+      <dt>Q. 단체 예약이 가능한가요?</dt>
+      <dd>A. 10인 이상 단체는 전화로 별도 문의해 주세요.</dd>
+      <dt>Q. 장기 투숙 할인 있나요?</dt>
+      <dd>A. 7박 이상 시 장기 할인율을 적용합니다.</dd>
+      <dt>Q. 주차는 어떻게 하나요?</dt>
+      <dd>A. 인근 공영주차장을 이용해 주세요. 1일 약 10,000원입니다.</dd>
+      <dt>Q. 야간 입실이 가능한가요?</dt>
+      <dd>A. 22시 이후 입실 예정 시 사전에 연락 부탁드립니다.</dd>
+      <dt>Q. 인원 추가는 어떻게 되나요?</dt>
+      <dd>A. 객실별 최대 인원을 확인해 주시고, 추가 인원은 사전 문의 바랍니다.</dd>
+      <dt>Q. 영수증/현금영수증 발급 가능하나요?</dt>
+      <dd>A. 가능하며 체크인 시 요청해 주세요.</dd>
+    </dl>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-info">
+      <p>상호: 비치웨이 게스트하우스 | 대표: 김종학 | 사업자번호: 845-04-02262</p>
+      <p>주소: 부산시 해운대구 송정중앙로36번길 36-9(송정동)</p>
+      <p>연락처: 010-5763-3421 | info@beachway.kr</p>
+    </div>
+    <div class="footer-links">
+      <a href="rooms.html">객실</a>
+      <a href="facilities.html">시설</a>
+      <a href="location.html">오시는 길</a>
+      <a href="reservation.html">예약안내</a>
+    </div>
+  </div>
+</footer>
+<script src="js/script.js" defer></script>
+</body>
+</html>

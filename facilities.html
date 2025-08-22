@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>편의시설 | 비치웨이 게스트하우스</title>
+  <meta name="description" content="주방, 세탁실, 바비큐, 루프탑 등 비치웨이 게스트하우스의 공용공간과 편의시설 안내.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <p class="logo"><a href="index.html">비치웨이 게스트하우스</a></p>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span class="fas fa-bars"></span></button>
+    <nav class="nav" aria-label="주요">
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="rooms.html">객실</a></li>
+        <li><a href="facilities.html" class="active">시설</a></li>
+        <li><a href="location.html">오시는 길</a></li>
+        <li><a href="reservation.html">예약안내</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="fixed-reservation-bar" aria-hidden="true">
+  <button class="btn-primary" onclick="scrollToReservation()">예약하기</button>
+</div>
+<main class="container">
+  <h1>공용공간 및 편의시설</h1>
+  <div class="facility-list">
+    <article class="facility">
+      <h2>공용 주방</h2>
+      <p>이용 시간: 07:00–22:00 | 무료</p>
+      <p>기본 조리도구와 냉장고, 정수기가 마련되어 있습니다.</p>
+    </article>
+    <article class="facility">
+      <h2>세탁실</h2>
+      <p>이용 시간: 08:00–20:00 | 유료(1회 2,000원)</p>
+      <p>세탁기와 건조기가 구비되어 있으며 세제는 제공됩니다.</p>
+    </article>
+    <article class="facility">
+      <h2>바비큐 공간</h2>
+      <p>이용 시간: 18:00–22:00 | 유료(예약 필수)</p>
+      <p>숯과 그릴 대여가 가능하며 외부 음식 반입 가능합니다.</p>
+    </article>
+    <article class="facility">
+      <h2>루프탑</h2>
+      <p>이용 시간: 07:00–23:00 | 무료</p>
+      <p>송정 바다를 내려다보는 전망대를 즐겨보세요.</p>
+    </article>
+    <article class="facility">
+      <h2>라운지</h2>
+      <p>이용 시간: 24시간 | 무료</p>
+      <p>조식 제공 및 편안한 휴식을 위한 공간입니다.</p>
+    </article>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-info">
+      <p>상호: 비치웨이 게스트하우스 | 대표: 김종학 | 사업자번호: 845-04-02262</p>
+      <p>주소: 부산시 해운대구 송정중앙로36번길 36-9(송정동)</p>
+      <p>연락처: 010-5763-3421 | info@beachway.kr</p>
+    </div>
+    <div class="footer-links">
+      <a href="rooms.html">객실</a>
+      <a href="facilities.html">시설</a>
+      <a href="location.html">오시는 길</a>
+      <a href="reservation.html">예약안내</a>
+    </div>
+  </div>
+</footer>
+<script src="js/script.js" defer></script>
+</body>
+</html>

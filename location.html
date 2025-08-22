@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오시는 길 | 비치웨이 게스트하우스</title>
+  <meta name="description" content="부산 송정해수욕장과 주요 교통편에서 비치웨이 게스트하우스로 오시는 길 안내.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <p class="logo"><a href="index.html">비치웨이 게스트하우스</a></p>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span class="fas fa-bars"></span></button>
+    <nav class="nav" aria-label="주요">
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="rooms.html">객실</a></li>
+        <li><a href="facilities.html">시설</a></li>
+        <li><a href="location.html" class="active">오시는 길</a></li>
+        <li><a href="reservation.html">예약안내</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="fixed-reservation-bar" aria-hidden="true">
+  <button class="btn-primary" onclick="scrollToReservation()">예약하기</button>
+</div>
+<main class="container">
+  <h1>오시는 길</h1>
+  <section class="map-section">
+    <p><a href="https://maps.google.com" target="_blank" rel="noopener">구글 지도로 열기</a></p>
+    <p>※ 실제 사이트에서는 아래에 지도 embed 코드가 들어갑니다.</p>
+  </section>
+  <section class="transport">
+    <h2>주요 교통편</h2>
+    <ul>
+      <li>김해공항 → 송정역 버스 2호선 환승, 약 60분</li>
+      <li>부산역 KTX → 동해선 송정역, 약 50분</li>
+      <li>해운대역 → 송정해수욕장 버스 1001번, 약 25분</li>
+    </ul>
+  </section>
+  <section class="attractions">
+    <h2>주변 명소</h2>
+    <ul>
+      <li>해동용궁사: 차로 10분</li>
+      <li>오시리아 관광단지: 차로 12분</li>
+      <li>해운대 해수욕장: 차로 15분</li>
+    </ul>
+  </section>
+  <section class="parking">
+    <h2>주차 안내</h2>
+    <p>게스트하우스 앞 공영주차장(유료) 이용 가능. 1일 약 10,000원.</p>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-info">
+      <p>상호: 비치웨이 게스트하우스 | 대표: 김종학 | 사업자번호: 845-04-02262</p>
+      <p>주소: 부산시 해운대구 송정중앙로36번길 36-9(송정동)</p>
+      <p>연락처: 010-5763-3421 | info@beachway.kr</p>
+    </div>
+    <div class="footer-links">
+      <a href="rooms.html">객실</a>
+      <a href="facilities.html">시설</a>
+      <a href="location.html">오시는 길</a>
+      <a href="reservation.html">예약안내</a>
+    </div>
+  </div>
+</footer>
+<script src="js/script.js" defer></script>
+</body>
+</html>
