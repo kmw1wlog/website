@@ -1,0 +1,107 @@
+@startuml
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+
+Table(locations, "locations") {
+  id PK
+  name
+  address
+  lat
+  lng
+  floor_area_sqm
+  floor
+  frontage_m
+  corner_flag
+  visibility
+  road_class
+  parking
+  zoning
+  building_age
+  created_at
+}
+
+Table(trade_areas, "trade_areas") {
+  id PK
+  location_id FK
+  method
+  params_json
+  geom
+}
+
+Table(poi, "poi") {
+  id PK
+  brand
+  category
+  lat
+  lng
+  is_competitor
+  weight
+  geom
+}
+
+Table(demography, "demography") {
+  geo_id PK
+  pop_total
+  pop_day
+  pop_night
+  income_idx
+  student_idx
+  office_worker_idx
+  age_buckets_json
+  geom
+}
+
+Table(rent_stats, "rent_stats") {
+  geo_id PK
+  rent_psm_p50
+  rent_psm_p75
+  deposit_ratio
+  mgmt_fee_psm
+  fitout_cost_psm
+  lease_term_months
+}
+
+Table(finance_assumptions, "finance_assumptions") {
+  id PK
+  mode
+  royalty_rate
+  ad_fee_rate
+  cogs_rate
+  labor_rate
+  other_opex_rate
+  wacc
+  hurdle_rate
+  corp_support_cost
+}
+
+Table(score_cache, "score_cache") {
+  location_id PK FK
+  score
+  demand
+  competition
+  site
+  cost
+  risk
+  finance
+  p50_revenue
+  p75_revenue
+  payback_months_corp
+  franchise_profit_idx
+  cannibalization_idx
+  updated_at
+}
+
+Table(similarity, "similarity") {
+  id PK
+  location_id FK
+  neighbor_location_id FK
+  sim_cosine
+  method
+  features_json
+}
+
+locations "1" -- "*" trade_areas
+locations "1" -- "0..1" score_cache
+locations "1" -- "*" similarity : from
+locations "1" -- "*" similarity : to
+
+@enduml
