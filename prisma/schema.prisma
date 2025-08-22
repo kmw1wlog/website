@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model locations {
+  id              Int      @id @default(autoincrement())
+  name            String
+  address         String
+  lat             Float
+  lng             Float
+  floor_area_sqm  Float
+  floor           Int?
+  frontage_m      Float?
+  corner_flag     Boolean?
+  visibility      Int?
+  road_class      String?
+  parking         Boolean?
+  zoning          String?
+  building_age    Int?
+  created_at      DateTime @default(now())
+  trade_areas     trade_areas[]
+  score_cache     score_cache?
+  similarity_from similarity[] @relation("from")
+  similarity_to   similarity[] @relation("to")
+}
+
+model trade_areas {
+  id         Int      @id @default(autoincrement())
+  location   locations @relation(fields: [location_id], references: [id])
+  location_id Int
+  method     String
+  params_json Json?
+  geom       Bytes    @db.Geography(MultiPolygon, 4326)
+}
+
+model poi {
+  id           Int      @id @default(autoincrement())
+  brand        String?
+  category     String?
+  lat          Float
+  lng          Float
+  is_competitor Boolean
+  weight       Float?
+  geom         Bytes    @db.Geography(Point, 4326)
+}
+
+model demography {
+  geo_id            Int      @id
+  pop_total         Int?
+  pop_day           Int?
+  pop_night         Int?
+  income_idx        Float?
+  student_idx       Float?
+  office_worker_idx Float?
+  age_buckets_json  Json?
+  geom              Bytes    @db.Geography(Polygon, 4326)
+}
+
+model rent_stats {
+  geo_id            Int      @id
+  rent_psm_p50      Float?
+  rent_psm_p75      Float?
+  deposit_ratio     Float?
+  mgmt_fee_psm      Float?
+  fitout_cost_psm   Float?
+  lease_term_months Int?
+}
+
+model finance_assumptions {
+  id             Int     @id @default(autoincrement())
+  mode           String  @db.VarChar(10)
+  royalty_rate   Float?
+  ad_fee_rate    Float?
+  cogs_rate      Float?
+  labor_rate     Float?
+  other_opex_rate Float?
+  wacc           Float?
+  hurdle_rate    Float?
+  corp_support_cost Float?
+}
+
+model score_cache {
+  location_id           Int      @id
+  location              locations @relation(fields: [location_id], references: [id])
+  score                 Float
+  demand                Float
+  competition           Float
+  site                  Float
+  cost                  Float
+  risk                  Float
+  finance               Float
+  p50_revenue           Float?
+  p75_revenue           Float?
+  payback_months_corp   Float?
+  franchise_profit_idx  Float?
+  cannibalization_idx   Float?
+  updated_at            DateTime @default(now())
+}
+
+model similarity {
+  id                  Int      @id @default(autoincrement())
+  location            locations @relation("from", fields: [location_id], references: [id])
+  location_id         Int
+  neighbor            locations @relation("to", fields: [neighbor_location_id], references: [id])
+  neighbor_location_id Int
+  sim_cosine          Float
+  method              String?
+  features_json       Json?
+}
