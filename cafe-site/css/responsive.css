@@ -1,0 +1,19 @@
+/* === responsive.css ===
+   반응형 보정: 모바일 우선으로 폰트, 그리드, 내비 토글 등
+*/
+@media (max-width: 768px) {
+  .grid-3 { grid-template-columns: repeat(2,1fr); }
+  .nav__menu { display: none; position: absolute; top:100%; right:0; background: var(--color-bg); flex-direction: column; width:200px; box-shadow: var(--shadow-soft); }
+  .nav__menu.show { display:flex; }
+  .hamburger { display:block; background:none; }
+  .hero__title { font-size:2rem; }
+  .hero__subtitle { font-size:1rem; }
+  .intro { flex-direction:column; }
+}
+
+@media (max-width: 480px) {
+  .grid-3, .grid-2-md { grid-template-columns: 1fr; }
+  .cta-bar__text { font-size:0.875rem; }
+  .btn-large { font-size:1rem; }
+  .hero__title { font-size:1.5rem; }
+}
