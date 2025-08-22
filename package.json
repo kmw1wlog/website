@@ -1,0 +1,37 @@
+{
+  "name": "consulting-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"No tests implemented\""
+  },
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.344.0",
+    "framer-motion": "^11.0.0",
+    "zod": "^3.22.4",
+    "react-hook-form": "^7.45.0",
+    "contentlayer": "^0.3.4",
+    "next-contentlayer": "^0.3.4",
+    "date-fns": "^3.6.0",
+    "class-variance-authority": "^0.7.0",
+    "tailwind-merge": "^2.2.1",
+    "resend": "^2.0.0",
+    "@hcaptcha/react-hcaptcha": "^1.9.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.2.3",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.16",
+    "contentlayer": "^0.3.4"
+  }
+}
