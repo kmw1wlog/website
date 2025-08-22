@@ -1,0 +1,19 @@
+/* css/responsive.css */
+/* 모바일 우선, 브레이크포인트: md 768px, lg 1024px, xl 1280px */
+
+@media (max-width: 767px) {
+  .main-nav ul { flex-direction: column; display: none; }
+  .nav-toggle { display: block; }
+  .card-grid { grid-template-columns: 1fr; }
+  .usp-grid ul { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card-grid { grid-template-columns: repeat(2,1fr); }
+  .usp-grid ul { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (min-width: 1024px) {
+  .card-grid { grid-template-columns: repeat(3,1fr); }
+  .usp-grid ul { grid-template-columns: repeat(4,1fr); }
+}
