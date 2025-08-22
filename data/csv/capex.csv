@@ -1,0 +1,11 @@
+store_id,start_yyyymm,amount,life_months,purpose
+1,202401,5000000,60,initial build
+1,202405,1000000,36,minor remodel
+2,202401,4000000,60,initial build
+2,202404,1500000,36,renovation
+1,202101,2000000,48,legacy capex
+2,202102,1800000,48,legacy capex
+1,202302,500000,24,upgrade
+2,202303,600000,24,upgrade
+1,202305,700000,24,upgrade
+2,202305,650000,24,upgrade
