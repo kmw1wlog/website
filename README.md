@@ -1,145 +1,62 @@
-# Minimal Static Business Website
+# Consulting Website (Next.js)
 
-이 레포는 **정적(Static) HTML/CSS/JS** 템플릿입니다. Next.js 같은 프레임워크를 쓰지 않으며, **필수 요소만** 포함합니다. 업종별(미용실/학원/헬스장/숙박 등)로는 **텍스트와 이미지만 교체**하면 됩니다.
+프로덕션 준비된 컨설팅 원페이지 + 블로그 예시입니다. 주요 결정 사항과 사용 방법을 문서화했습니다.
 
----
+## 🚀 기술 스택
 
-## ✅ 목표
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS + shadcn/ui 구성 가능
+- MDX + Contentlayer
+- hCaptcha + Resend 메일 전송
 
-* 공장형 납품에 적합한 **최소 구성**
-* 프레임워크/패키지 설치 없이 **그냥 열면 동작**
-* 모바일 대응(Responsive) + 기본 SEO 메타 태그
-
----
-
-## 🧱 기술 스택
-
-* **HTML5**: 문서 구조
-* **CSS3**: `css/style.css`, `css/responsive.css`
-* **Vanilla JS**: `js/script.js` (슬라이드, 햄버거 메뉴, 스크롤)
-* **Google Fonts**, **Font Awesome** (아이콘)
-
-> 패키지 매니저(예: npm, yarn, pnpm)와 개발 서버 포트 설정은 **불필요**합니다.
-
----
-
-## 📂 폴더 구조
+## 📂 주요 구조
 
 ```
-/css
-  ├─ style.css          # 기본 스타일(색상, 타이포그래피, 레이아웃)
-  └─ responsive.css     # 반응형 보정
-/js
-  └─ script.js          # 슬라이더/토글/스무스 스크롤 등 최소 상호작용
-index.html              # 메인 페이지 (필수 섹션만 포함)
-rooms.html              # (선택) 업종 맞춰 교체
-facilities.html         # (선택)
-location.html           # (선택)
-reservation.html        # (선택)
+app/
+  (marketing)/
+    page.tsx        # 홈
+    about/page.tsx  # 소개
+    blog/[slug]/    # 블로그 글
+    blog/page.tsx   # 블로그 목록
+    cases/[slug]/   # 케이스 스터디 글
+    cases/page.tsx  # 케이스 목록
+    contact/page.tsx# 문의
+  api/
+    contact/route.ts# 폼 처리
+    og/route.tsx    # OG 이미지
+content/
+  posts/*.mdx       # 블로그 글
+  cases/*.mdx       # 케이스 스터디
+  config/site.ts    # 사이트 설정
 ```
 
-> **핵심은 `index.html`** 입니다. 나머지 페이지는 업종에 맞춰 쓰거나 제거하세요.
+## 🔧 환경 변수(.env)
 
----
+`.env` 파일에 아래 값을 설정합니다. 예시는 `.env.example` 참고.
 
-## 🧩 메인 페이지(`index.html`) 구성
+- `NEXT_PUBLIC_SITE_URL`
+- `NEXT_PUBLIC_BRAND_NAME`
+- `NEXT_PUBLIC_OWNER_NAME`
+- `NEXT_PUBLIC_EMAIL`
+- `NEXT_PUBLIC_CTA_LINK`
+- `NEXT_PUBLIC_HCAPTCHA_SITE_KEY`
+- `RESEND_API_KEY`
 
-1. **상단 고정 CTA 바**: 예약/문의 버튼
-2. **헤더 & 내비게이션**: 로고, 메뉴, 모바일 햄버거
-3. **Hero 슬라이더**: 주요 이미지 1\~4장 + 문구 + CTA
-4. **USP 4아이콘**: 위치/시설/혜택 등 핵심 포인트
-5. **소개 섹션**: 간단한 설명 + 대표 이미지
-6. **서비스/상품 미리보기**: 카드 3장(이름/설명/포인트/가격)
-7. **빠른 예약/문의 폼**: 날짜/인원 또는 간단 문의
-8. **연락처 섹션**: 전화/카카오/이메일/주소 버튼
-9. **푸터**: 사업자 정보, 바로가기, 저작권 표기
+## 💻 개발 스크립트
 
-이 9개 블록이 **필수 최소치**입니다. 더 넣지 않아도 납품 가능합니다.
+```bash
+npm install
+npm run dev
+npm run build
+```
 
----
+## 📚 콘텐츠 발행
 
-## 🎛️ 커스터마이징 가이드 (필수 작업만)
+- 블로그: `content/posts/*.mdx` 파일 추가
+- 케이스: `content/cases/*.mdx` 파일 추가
+- 빌드 후 배포하면 Contentlayer가 자동으로 반영됩니다.
 
-1. **문구 교체**: `index.html`의 한글 텍스트를 업종에 맞게 수정
-2. **이미지 교체**: 이미지 폴더 경로만 유지하고 파일만 바꿔치기
-3. **연락처/링크 교체**: 전화/카카오/이메일/예약 링크 업데이트
-4. **브랜드 컬러**: `css/style.css` 상단 변수(또는 색상 토큰) 변경
-5. **가격/서비스 항목**: 카드 3개만 유지(필수 최소), 필요 시 라벨만 교체
+## ⚠️ 제한
 
-> **주의**: 섹션 갯수를 늘리면 공장형 생산성이 떨어집니다. 3\~4개 카드, 4개 USP만 권장.
-
----
-
-## 📱 반응형 원칙
-
-* `responsive.css`에서 **모바일 우선**으로 폰트, 그리드, 갭만 보정
-* 테이블/그리드 대신 **플렉스/그리드 카드** 유지(줄바꿈으로 자연 적응)
-
----
-
-## 🔧 JS 동작(최소)
-
-* **슬라이더**: 좌우 버튼, 인디케이터, 자동 전환(옵션)
-* **햄버거 메뉴**: 모바일 메뉴 토글
-* **스무스 스크롤**: 상단 CTA/버튼 → 예약/문의로 이동
-
-> 의존성 없음. ES5+ 순정 JS만 사용.
-
----
-
-## 🧾 SEO/메타(필수 최소)
-
-* `<title>`과 `<meta name="description">` 수정
-* 오픈그래프 3종 권장: `og:title`, `og:description`, `og:image`
-* 파비콘 1개(`favicon.ico`)만 두어도 충분
-
----
-
-## 🚀 배포(프레임워크/서버 없음)
-
-* **GitHub Pages**: Settings → Pages → Branch `main` → `/root` 선택
-* **Netlify/Vercel**: 정적 사이트로 드래그&드롭 또는 레포 연결
-* **일반 호스팅/Nginx**: `index.html`을 루트에 두고 정적 제공
-
-> 빌드 단계가 없으므로 **포트/패키지 설치 절차가 없습니다.**
-
----
-
-## 🔁 새 고객(업종) 복제 절차
-
-1. 이 레포를 **템플릿으로 사용(Use this template)**
-2. `index.html` 텍스트/가격/연락처/지도 링크 교체
-3. 이미지 폴더만 교체(파일명은 유지하면 JS/CSS 수정 불필요)
-4. 필요 시 `rooms.html` 등 **선택 페이지**만 열어 교체
-
----
-
-## ❗ Do / Don’t
-
-**Do**
-
-* 메인 섹션은 그대로 두고 텍스트/이미지/색만 교체
-* 문의/예약은 전화/카톡/메일 중 1\~2개만 노출(간결)
-
-**Don’t**
-
-* 불필요한 섹션 추가로 길이 늘리기
-* 프레임워크/번들러 도입(공장형 납품 속도 저하)
-
----
-
-## 라이선스
-
-* 납품용 템플릿. 이미지/폰트 라이선스는 각 프로젝트에서 확인 후 교체하세요.
-
----
-
-### 빠른 체크리스트
-
-* [ ] 타이틀/디스크립션 교체
-* [ ] 연락처/예약 링크 교체
-* [ ] 히어로 1\~4장 이미지 교체
-* [ ] USP 4아이콘 문구 교체
-* [ ] 카드 3개 내용/가격 교체
-* [ ] 파비콘/OG 이미지 교체
-* [ ] GitHub Pages 연결 및 열람 확인
+이 레포는 자동화된 환경에서 생성되었으며 `node_modules`가 포함되어 있지 않습니다. 설치 후 실행해야 합니다.
