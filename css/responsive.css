@@ -1,0 +1,36 @@
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .intro-section {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .intro-content, .intro-image {
+    flex: 1;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .usp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .usp-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

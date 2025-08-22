@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!--
+    검수 체크리스트
+    - Lighthouse 90+(Performance/SEO/Best Practices/Accessibility)
+    - 키보드 포커스 이동 및 Skip to content 작동
+    - 이미지 alt/aria-label 존재
+    - 모바일 360px 기준 깨짐 없음
+    - 예약 버튼 앵커 정상 작동
+    - JSON-LD 유효(구글 리치리절트 테스트 기준)
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>산들식당 | 자연을 담은 따뜻한 한 끼</title>
+  <meta name="description" content="제철 재료로 정성껏 차린 한식 가정식, 산들식당에서 따뜻한 시간을 느껴보세요.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="산들식당">
+  <meta property="og:description" content="자연을 담은 따뜻한 한 끼">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2Fdg7xO9Y+0h7Fd2e1jVx1b8P4yyWJw4NE1mEYBjq1Vplu+oCdqzi+8Lk4p15R3L3U9g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="js/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "산들식당",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "서울특별시 마포구 예시로 123",
+      "addressLocality": "서울",
+      "addressCountry": "KR"
+    },
+    "telephone": "02-123-4567",
+    "servesCuisine": "한식 가정식",
+    "priceRange": "₩₩",
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"11:30","closes":"22:00"},
+      {"@type": "OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"11:00","closes":"22:00"}
+    ],
+    "sameAs": [
+      "https://instagram.com/sandul",
+      "https://facebook.com/sandul"
+    ],
+    "menu": "https://example.com/menu",
+    "acceptsReservations": true
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">본문 바로가기</a>
+
+  <div class="fixed-reservation-bar">
+    <a href="#reservation" class="btn btn-primary" aria-label="지금 예약하기 버튼">지금 예약하기</a>
+  </div>
+
+  <header class="header">
+    <nav class="navbar" aria-label="주 메뉴">
+      <a href="/" class="logo" aria-label="산들식당 홈">산들식당</a>
+      <button class="hamburger" aria-label="메뉴 토글">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#hero">홈</a></li>
+        <li><a href="#menu">메뉴</a></li>
+        <li><a href="#intro">소개</a></li
+        ><li><a href="#reservation">예약</a></li>
+        <li><a href="#contact">위치</a></li>
+        <li><a href="#reviews">리뷰</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero Slider -->
+    <section class="hero" id="hero">
+      <ul class="slides" aria-live="polite">
+        <li class="slide active">
+          <img src="images/hero-1.jpg" alt="정갈한 한상차림" />
+          <div class="hero-content">
+            <h1>자연을 담은 따뜻한 한 끼</h1>
+            <p>제철 재료로 정성껏 차린 한식 가정식</p>
+            <a href="#reservation" class="btn btn-primary">예약하기</a>
+          </div>
+        </li>
+        <li class="slide">
+          <img src="images/hero-2.jpg" alt="셰프가 반찬을 준비하는 모습" loading="lazy" />
+          <div class="hero-content">
+            <h1>집밥의 따스함 그대로</h1>
+            <p>수제 반찬과 아늑한 분위기</p>
+            <a href="#menu" class="btn btn-outline">메뉴 보기</a>
+          </div>
+        </li>
+        <li class="slide">
+          <img src="images/hero-3.jpg" alt="식당 내부 전경" loading="lazy" />
+          <div class="hero-content">
+            <h1>홍대역 5분 거리</h1>
+            <p>소중한 사람과 편안한 식사시간</p>
+            <a href="#contact" class="btn btn-outline">찾아오기</a>
+          </div>
+        </li>
+      </ul>
+      <button class="prev" aria-label="이전 슬라이드"><i class="fa fa-chevron-left"></i></button>
+      <button class="next" aria-label="다음 슬라이드"><i class="fa fa-chevron-right"></i></button>
+      <div class="indicators" aria-label="슬라이드 인디케이터">
+        <button aria-label="1번 슬라이드" data-slide="0" class="active"></button>
+        <button aria-label="2번 슬라이드" data-slide="1"></button>
+        <button aria-label="3번 슬라이드" data-slide="2"></button>
+      </div>
+    </section>
+
+    <!-- USP Section -->
+    <section class="usp-section">
+      <h2 class="section-title">산들식당의 약속</h2>
+      <div class="usp-grid">
+        <div class="usp-item">
+          <i class="fa fa-seedling" aria-hidden="true"></i>
+          <h3>제철 재료</h3>
+          <p>신선한 제철 식재료만 사용합니다.</p>
+        </div>
+        <div class="usp-item">
+          <i class="fa fa-utensils" aria-hidden="true"></i>
+          <h3>수제 반찬</h3>
+          <p>모든 반찬을 직접 만들어 제공합니다.</p>
+        </div>
+        <div class="usp-item">
+          <i class="fa fa-mug-hot" aria-hidden="true"></i>
+          <h3>아늑한 분위기</h3>
+          <p>편안한 공간에서 느긋한 식사를.</p>
+        </div>
+        <div class="usp-item">
+          <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+          <h3>홍대역 5분</h3>
+          <p>지하철에서 도보 5분 거리입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section" id="intro">
+      <div class="intro-content">
+        <h2 class="section-title">우리의 이야기</h2>
+        <p>산들식당은 자연과 사람을 생각하는 마음으로 매일 밥상을 차립니다. 미쉐린 가이드에 소개된 로컬푸드 레스토랑으로, 비건 옵션도 다양하게 준비되어 있습니다.</p>
+        <span class="badge">미쉐린 가이드 추천</span>
+      </div>
+      <div class="intro-image">
+        <img src="images/intro.jpg" alt="식당 대표 이미지" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section class="menu-preview" id="menu">
+      <h2 class="section-title">시그니처 메뉴</h2>
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="images/menu-signature-1.jpg" srcset="images/menu-signature-1.jpg 1x, images/menu-signature-1@2x.jpg 2x" sizes="(max-width:600px) 100vw, 400px" alt="들깨 수제비" loading="lazy">
+          <div class="menu-info">
+            <h3>들깨 수제비 <span class="tag">베스트</span></h3>
+            <p>고소한 들깨와 쫄깃한 반죽이 어우러진 정성 가득 수제비.</p>
+            <p class="price">₩9,000</p>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="images/menu-signature-2.jpg" srcset="images/menu-signature-2.jpg 1x, images/menu-signature-2@2x.jpg 2x" sizes="(max-width:600px) 100vw, 400px" alt="모듬 전" loading="lazy">
+          <div class="menu-info">
+            <h3>모듬 전 <span class="tag">계절</span></h3>
+            <p>철마다 바삭하게 부쳐내는 다채로운 전의 조화.</p>
+            <p class="price">₩15,000</p>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="images/menu-signature-3.jpg" srcset="images/menu-signature-3.jpg 1x, images/menu-signature-3@2x.jpg 2x" sizes="(max-width:600px) 100vw, 400px" alt="채소 비빔밥" loading="lazy">
+          <div class="menu-info">
+            <h3>채소 비빔밥 <span class="tag">비건</span></h3>
+            <p>다양한 채소와 매콤한 고추장이 어우러진 건강한 비빔밥.</p>
+            <p class="price">₩8,500</p>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="images/menu-signature-4.jpg" srcset="images/menu-signature-4.jpg 1x, images/menu-signature-4@2x.jpg 2x" sizes="(max-width:600px) 100vw, 400px" alt="소불고기 정식" loading="lazy">
+          <div class="menu-info">
+            <h3>소불고기 정식 <span class="tag">스페셜</span></h3>
+            <p>달큰한 양념에 부드러운 소고기를 더한 인기 정식.</p>
+            <p class="price">₩12,000</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Quick Reservation -->
+    <section class="quick-reservation" id="reservation">
+      <h2 class="section-title">간편 예약 / 문의</h2>
+      <form id="quick-reservation-form">
+        <label>
+          <span class="sr-only">예약 날짜</span>
+          <input type="date" name="date" required>
+        </label>
+        <label>
+          <span class="sr-only">인원</span>
+          <input type="number" name="people" min="1" max="10" placeholder="인원" required>
+        </label>
+        <label>
+          <span class="sr-only">시간</span>
+          <input type="time" name="time" required>
+        </label>
+        <button type="submit" class="btn btn-primary">예약 문의</button>
+      </form>
+      <div class="reservation-links">
+        <a href="tel:021234567" class="btn btn-outline" aria-label="전화로 예약하기">전화</a>
+        <a href="https://pf.kakao.com/_abcde" class="btn btn-outline" aria-label="카카오톡 채널 이동">카카오</a>
+        <a href="https://booking.naver.com/restaurant" class="btn btn-outline" aria-label="네이버 예약 페이지로 이동">네이버예약</a>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+      <h2 class="section-title">리뷰 하이라이트</h2>
+      <p class="rating" aria-label="평균 평점 4.8점">⭐⭐⭐⭐⭐ 4.8 / 5</p>
+      <div class="review-list">
+        <blockquote>“맛과 정성이 느껴집니다.”</blockquote>
+        <blockquote>“친절한 서비스에 감동했어요.”</blockquote>
+      </div>
+      <p class="review-source">출처: 네이버 리뷰</p>
+      <a href="#" class="more-reviews" aria-label="리뷰 더 보기">더보기</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <h2 class="section-title">문의 / 오시는 길</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>주소:</strong> 서울특별시 마포구 예시로 123</p>
+          <p><strong>전화:</strong> <a href="tel:021234567">02-123-4567</a></p>
+          <p><strong>영업시간:</strong> 월-금 11:30-22:00, 토/일 11:00-22:00 (브레이크 15:00-17:00)</p>
+          <p><strong>계좌:</strong> 우리은행 123-456789-00-000 (산들식당)</p>
+          <div class="contact-buttons">
+            <a href="tel:021234567" class="btn btn-primary" aria-label="전화 문의">전화하기</a>
+            <a href="https://pf.kakao.com/_abcde" class="btn btn-outline" aria-label="카카오톡 문의">카카오톡</a>
+          </div>
+        </div>
+        <div class="contact-map">
+          <!-- TODO: Replace MAP_IFRAME_SRC with actual source -->
+          <iframe src="https://maps.google.com?output=embed" title="산들식당 위치 지도" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-info">
+        <h3>산들식당</h3>
+        <p>사업자등록번호 123-45-67890 | 대표 홍길동</p>
+        <p>© 2024 Sandul Restaurant. All rights reserved.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#hero">홈</a></li>
+        <li><a href="#menu">메뉴</a></li>
+        <li><a href="#reservation">예약</a></li>
+      </ul>
+      <div class="footer-sns">
+        <a href="https://instagram.com/sandul" aria-label="인스타그램"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/sandul" aria-label="페이스북"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
