@@ -1,0 +1,1 @@
+document.write('<script src="assets/app-1.js"><\/script><script src="assets/app-2.js"><\/script><script src="assets/app-3.js"><\/script><script src="assets/app-4.js"><\/script><script src="assets/app-5.js"><\/script>');
