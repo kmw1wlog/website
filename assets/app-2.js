@@ -24,7 +24,7 @@ function home() {
         <div class="hero-copy reveal">
           <span class="kicker">RYUL ASSESSMENT CONTENTS</span>
           <h1 class="display">시험의<br><span class="serif">기준</span>을<br>세우다.</h1>
-          <p class="lead">모의고사와 고난도 문항을 설계하고 공급합니다. 눈에 보이는 것은 오직 완성된 시험지와 문항의 완성도입니다.</p>
+          <p class="lead">모의고사와 고난도 문항을 설계하고 공급합니다.</p>
           <div class="hero-actions"><a class="btn btn-dark" href="mock.html">콘텐츠 보기</a><a class="btn" href="group-purchase.html">단체구매 상담</a></div>
           <div class="hero-note"><div><strong>전과목 콘텐츠</strong><span>모의고사·문항 단위 공급</span></div><div><strong>기관 전용 구성</strong><span>과목·난도·회차 협의</span></div><div><strong>납품형 패키지</strong><span>시험지·정답·해설</span></div></div>
         </div>
