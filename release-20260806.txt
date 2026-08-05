@@ -1,0 +1,3 @@
+release=20260806a
+commit=e72545e5c90e40142bea8203d2a829ffb9b99044
+site=RYUL institutional company website
